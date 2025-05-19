@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #85756E;
+    min-height: 100vh;
+}
+
+.greeting {
+    padding-top: 50px;
+    font-size: 30px;
+    color: #E4D7C1;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+    font-size: 70px;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    background: #E4D7C1;
+    padding: 25px;
+    width: 550px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: block;
+    margin: 0 auto;
+}
+
+.todo-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.notepad-img {
+    padding-left: 10px;
+}
+
+.todo-body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; 
+}
+
+.todo-input {
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    text-indent: 10px;
+    margin-right: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.add-todo {
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.add-todo:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.add-todo:active {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    bottom: 10px;
+    position: absolute;
+    color: #E4D7C1;
+    font-weight: 500; 
+    font-size: 18px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.option:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.option + .option {
+    margin-left: 10px;
+}
