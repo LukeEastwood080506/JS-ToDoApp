@@ -2,6 +2,9 @@ var time;
 var userName;
 var timeOfDay;
 var tasks = [];
+var latitude;
+var longitude;
+var weatherData;
 
 
 class Task {
@@ -9,6 +12,47 @@ class Task {
         this.name = name;
         this.isDone = isDone;
     }
+}
+
+function getWeather() {
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+            
+            var SECRET_API_KEY;
+            const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+            
+            fetch(weatherUrl)
+                .then(response => response.json())
+                .then(data => {
+                    weatherData = data;
+                    displayWeather(weatherData);
+                })
+                .catch(error => {
+                    console.error('Error fetching weather:', error);
+                });
+        });
+    }
+}
+
+function displayWeather(data) {
+    const temperature = Math.round(data.main.temp);
+    const description = capitalizeFirstLetters(data.weather[0].description);
+    const icon = data.weather[0].icon;
+    document.getElementById("weather").innerHTML = `
+        <span>
+            The Weather Currently Is ${description}, ${temperature}°C
+            <img src="https://openweathermap.org/img/wn/${icon}@2x.png" style="vertical-align: middle; padding-bottom: 6px;">
+        </span>
+    `;
+}
+
+function capitalizeFirstLetters(str) {
+  return str
+    .split(' ') // Split the string into an array of words
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize the first letter of each word
+    .join(' '); // Join the words back into a single string
 }
 
 function changeName() {
@@ -41,6 +85,8 @@ function load() {
     } else {
         tasks = [];
     }
+
+    getWeather();
 
     document.getElementById("greeting").innerHTML = "Good " + timeOfDay + ", " + userName + "!";
 }
@@ -160,6 +206,11 @@ document.addEventListener("keydown", function(event) {
         if (event.key === "s") {
         alert("Saving tasks...");
         save();
+        }
+
+        if (event.key === "w") {
+            displayWeather(weatherData);
+            alert(weatherData);
         }
     }
 });

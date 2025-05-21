@@ -13,12 +13,22 @@ body {
 
 .greeting {
     padding-top: 50px;
-    font-size: 30px;
     color: #E4D7C1;
     text-align: center;
     margin-bottom: 20px;
     display: block;
     font-size: 70px;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.weather {
+    padding-top: 20px;
+    font-size: 40px;
+    color: #E4D7C1;
+    text-align: center;
+    margin-bottom: 40px;
+    display: block;
     font-weight: 600;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
