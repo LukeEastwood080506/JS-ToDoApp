@@ -13,4 +13,4 @@ Auto save, and manually save with the 's' key.\
 \
 Here is a video showing off the application, as well as showing the weather API functionality.\
 \
-[![Video](https://raw.githubusercontent.com/LukeEastwood080506/JS-ToDoApp/main/images/thumbnail.png)](https://raw.githubusercontent.com/LukeEastwood080506/JS-ToDoApp/main/videos/Showcase.mp4)
+[![Showcase](https://img.youtube.com/vi/z9V60kVkYNk/maxresdefault.jpg)](https://youtu.be/z9V60kVkYNk)
