@@ -20,7 +20,7 @@ function getWeather() {
             latitude = position.coords.latitude;
             longitude = position.coords.longitude;
             
-            var SECRET_API_KEY;
+            const apiKey = ''; // OpenWeatherMap API key would go here
             const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
             
             fetch(weatherUrl)
