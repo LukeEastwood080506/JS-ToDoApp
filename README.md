@@ -12,4 +12,5 @@ Clear all tasks with a single button,\
 Auto save, and manually save with the 's' key.\
 \
 Here is a video showing off the application, as well as showing the weather API functionality.\
-[<video src="videos/Showcase.mp4" width="600" controls></video>](https://github.com/LukeEastwood080506/JS-ToDoApp/blob/main/videos/Showcase.mp4)
+\
+[![Video](https://raw.githubusercontent.com/LukeEastwood080506/JS-ToDoApp/main/images/thumbnail.png)](https://raw.githubusercontent.com/LukeEastwood080506/JS-ToDoApp/main/videos/Showcase.mp4)
