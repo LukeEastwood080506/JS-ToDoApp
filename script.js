@@ -40,12 +40,12 @@ function displayWeather(data) {
     const temperature = Math.round(data.main.temp);
     const description = capitalizeFirstLetters(data.weather[0].description);
     const icon = data.weather[0].icon;
-    document.getElementById("weather").innerHTML = `
-        <span>
-            The Weather Currently Is ${description}, ${temperature}°C
-            <img src="https://openweathermap.org/img/wn/${icon}@2x.png" style="vertical-align: middle; padding-bottom: 6px;">
-        </span>
-    `;
+    var iconImg = document.createElement("img");
+    iconImg.src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
+    iconImg.style.verticalAlign = "middle";
+    iconImg.style.paddingBottom = "6px";
+    document.getElementById("weather").textContent = `The Weather Currently Is ${description}, ${temperature}°C`;
+    document.getElementById("weather").appendChild(iconImg);
 }
 
 function capitalizeFirstLetters(str) {
@@ -88,7 +88,7 @@ function load() {
 
     getWeather();
 
-    document.getElementById("greeting").innerHTML = "Good " + timeOfDay + ", " + userName + "!";
+    document.getElementById("greeting").textContent = "Good " + timeOfDay + ", " + userName + "!";
 }
 
 function addTask(taskName, taskDone) {
@@ -113,7 +113,7 @@ function addTask(taskName, taskDone) {
         
     taskNameElement.className = "task-name";
     taskNameElement.style.float = "left";
-    taskNameElement.innerHTML = taskName;
+    taskNameElement.textContent = taskName;
 
     taskCheckBox.className = "task-checkbox";
     taskCheckBox.style.marginRight = "24px";
@@ -176,12 +176,12 @@ function fillTasks() {
 
 document.getElementById("change-name").addEventListener("click", function() {
     changeName();
-    document.getElementById("greeting").innerHTML = "Good " + timeOfDay + ", " + userName + "!";
+    document.getElementById("greeting").textContent = "Good " + timeOfDay + ", " + userName + "!";
 });
 
 document.getElementById("clear-tasks").addEventListener("click", function() {
     tasks = [];
-    document.getElementById("todo-list").innerHTML = "";
+    document.getElementById("todo-list").textContent = "";
     save();
 });
 
